@@ -1,0 +1,23 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/uss/hover.uss?fileID=7433441132597879392&amp;guid=da381821fb32ff04e970cf98dbecf7a2&amp;type=3#hover" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgba(119, 186, 231, 0); align-items: auto; width: 360px; height: 800px;">
+        <ui:VisualElement name="header" style="flex-grow: 0; background-color: rgba(255, 255, 255, 0); flex-direction: column; align-items: auto; width: 360px; height: 138px;">
+            <ui:Image name="Image" class="menu-button" style="align-self: flex-start; width: 42px; height: 42px; background-image: url(&apos;project://database/Assets/Sprites/Station-J_Resources/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/Icon_%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%EB%B2%84%ED%8A%BC.png?fileID=2800000&amp;guid=c28a8d0c361e4db479b1e875675dd768&amp;type=3#Icon_뒤로가기버튼&apos;); margin-top: 47.65px; margin-left: 10.15px;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="main" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: auto; width: 360px; height: 520px;" />
+        <ui:VisualElement name="footer" style="flex-grow: 0; background-color: rgb(255, 255, 255); align-items: auto; width: 362.77px; height: 142.96px; border-top-left-radius: 0; border-top-right-radius: 0; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+            <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 362.77px; height: 142.96px;">
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                    <ui:VisualElement name="save" class="menu-button" style="flex-grow: 0; width: 87px; height: 87px; padding-left: 0; margin-left: 40px; margin-top: 33.91px;">
+                        <ui:Image name="Image" style="align-self: flex-start; width: 61.85px; height: 39.31px; background-image: url(&apos;project://database/Assets/Sprites/Station-J_Resources/3.%20AR%EC%B2%B4%ED%97%98%EC%A1%B4/Icon_%EC%A0%80%EC%9E%A5%ED%95%98%EA%B8%B0.png?fileID=2800000&amp;guid=213b80a9d3a5c1143b4079e1f8c69682&amp;type=3#Icon_저장하기&apos;); margin-top: 0; margin-left: 8px; margin-right: 0; margin-bottom: 0;" />
+                        <ui:Label tabindex="-1" text="저장하기" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 67px; height: 21px; margin-top: 19.73px; margin-left: 8px; font-size: 18px; -unity-text-align: middle-center; margin-right: 0; margin-bottom: 0;" />
+                    </ui:VisualElement>
+                    <ui:VisualElement name="save" class="menu-button" style="flex-grow: 0; width: 88px; height: 90px; padding-left: 0; margin-left: 118px; margin-top: 33.91px; align-self: auto; background-image: none;">
+                        <ui:Image name="Image" style="align-self: flex-start; width: 43.38px; height: 43.07px; background-image: url(&apos;project://database/Assets/Sprites/Station-J_Resources/3.%20AR%EC%B2%B4%ED%97%98%EC%A1%B4/Icon_%EA%B3%B5%EC%9C%A0%ED%95%98%EA%B8%B0.png?fileID=2800000&amp;guid=35118b9cbe3c27e4792624bfdb77f66a&amp;type=3#Icon_공유하기&apos;); margin-top: 0; margin-left: 12px; margin-right: 0; margin-bottom: 0;" />
+                        <ui:Label tabindex="-1" text="공유하기" parse-escape-sequences="true" display-tooltip-when-elided="true" style="width: 67px; height: 21px; margin-top: 15.06px; margin-left: 8px; font-size: 18px; -unity-text-align: middle-center; margin-right: 0; margin-bottom: 0;" />
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
