@@ -1,0 +1,28 @@
+﻿<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/hover.uss?fileID=7433441132597879392&amp;guid=da381821fb32ff04e970cf98dbecf7a2&amp;type=3#hover" />
+    <ui:VisualElement style="flex-grow: 0; background-color: rgb(119, 186, 231); align-items: auto; width: 360px; height: 800px;">
+        <ui:VisualElement name="header" style="flex-grow: 0; background-color: rgb(255, 255, 255); flex-direction: column; align-items: auto; width: 360px; height: 138px;">
+            <ui:Image name="Image" class="menu-button" style="align-self: flex-start; width: 42px; height: 42px; background-image: url(&apos;project://database/Assets/Station-J_Resources/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/Icon_%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%EB%B2%84%ED%8A%BC.png?fileID=2800000&amp;guid=c28a8d0c361e4db479b1e875675dd768&amp;type=3#Icon_뒤로가기버튼&apos;); margin-top: 47.65px; margin-left: 10.15px;" />
+            <ui:Label tabindex="-1" text="AR 포토존" display-tooltip-when-elided="true" style="align-self: center; margin-left: 0; margin-right: 0; margin-top: 7.8px; margin-bottom: 17.46px; font-size: 30px; -unity-font-style: bold; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; width: 133px; height: 22px; -unity-text-align: middle-left;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="main" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-items: auto; width: 360px; height: 423px;">
+            <ui:VisualElement name="VisualElement" style="flex-grow: 1; background-color: rgb(119, 186, 231); width: 360px; height: 423px;">
+                <ui:Image name="Image" style="align-self: flex-start; width: 168px; height: 355.56px; background-image: url(&apos;project://database/Assets/Station-J_Resources/3.%20AR%EC%B2%B4%ED%97%98%EC%A1%B4/IMG_AR%ED%8F%AC%ED%86%A0%EC%A1%B4%EC%98%88%EC%8B%9C.png?fileID=2800000&amp;guid=56e9180bab4e3984abdbcd3ae4d2de45&amp;type=3#IMG_AR포토존예시&apos;); margin-top: 22.91px; margin-left: 103.38px; margin-right: 0; margin-bottom: 0;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="footer" style="flex-grow: 0; background-color: rgb(255, 255, 255); align-items: auto; width: 360px; height: 240px; border-top-left-radius: 24px; border-top-right-radius: 24px; border-bottom-left-radius: 0; border-bottom-right-radius: 0;">
+            <ui:VisualElement style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: flex-start; width: 370.15px; height: 239.18px;">
+                <ui:Label tabindex="-1" text="AR 포토존 명칭" display-tooltip-when-elided="true" name="Label" style="-unity-text-align: middle-left; width: 158px; height: 28px; font-size: 24px; align-self: flex-start; align-items: flex-start; margin-left: 32px; margin-right: 0; margin-top: 30px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; -unity-font-style: bold;" />
+                <ui:Label tabindex="-1" text="포토존에 대한 설명&#10;포토존 촬영 방법" display-tooltip-when-elided="true" enable-rich-text="true" style="width: 289px; height: 36px; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; margin-left: 32px; margin-right: 0; margin-top: 7px; margin-bottom: 0; -unity-text-align: middle-left;" />
+                <ui:VisualElement style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row;">
+                    <ui:Image name="Image" class="menu-button" style="align-self: flex-start; width: 164px; height: 60px; background-image: url(&apos;project://database/Assets/Station-J_Resources/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/BG_%EB%B2%84%ED%8A%BC.png?fileID=2800000&amp;guid=facfb757a55d8954c9b1b8f7bc37d0fa&amp;type=3#BG_버튼&apos;); margin-top: 60.18px; margin-left: 11px; margin-right: 5px; margin-bottom: 0;">
+                        <ui:Label tabindex="-1" text="위치보기" display-tooltip-when-elided="true" style="width: 133.68px; height: 59px; font-size: 24px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-center; margin-left: 15.16px; margin-right: 0; margin-top: 1px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    </ui:Image>
+                    <ui:Image name="Image" class="menu-button" style="align-self: flex-start; width: 164px; height: 60px; background-image: url(&apos;project://database/Assets/Station-J_Resources/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/BG_%EB%B2%84%ED%8A%BC.png?fileID=2800000&amp;guid=facfb757a55d8954c9b1b8f7bc37d0fa&amp;type=3#BG_버튼&apos;); margin-top: 60.18px; margin-left: 0; margin-right: 0; margin-bottom: 0;">
+                        <ui:Label tabindex="-1" text="촬영하기" display-tooltip-when-elided="true" enable-rich-text="true" style="width: 133.68px; height: 59px; font-size: 24px; color: rgb(255, 255, 255); -unity-font-style: bold; -unity-text-align: middle-center; margin-left: 15.16px; margin-right: 0; margin-top: 1px; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0;" />
+                    </ui:Image>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
