@@ -1,8 +1,8 @@
 public class NavigationView : UIView
 {
-    private int currentDestinaion;
+    private int currentDestination;
     public void Init(int destinationCoords)
     {
-        currentDestinaion = destinationCoords;
+        currentDestination = destinationCoords;
     }
 }
