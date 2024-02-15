@@ -5,8 +5,7 @@ public class MainView: UIView
 {
 
     private VisualElement navButton;
-    private VisualElement seniorButton;
-
+    
     protected override void Awake()
     {
         base.Awake();

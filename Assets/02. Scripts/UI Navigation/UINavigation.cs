@@ -24,7 +24,7 @@ public class UINavigation : Singleton<UINavigation>
     
     private void Init()
     {
-        // Clear();
+        Clear();
         foreach (var view in GetComponents<UIView>())
         {
             views[view.ViewIndex] = view;
