@@ -21,17 +21,11 @@ public abstract class UIView : MonoBehaviour
     }
     private void InitUIInstance()
     {
-        uiInstance = uiTree.Instantiate();
-        // for (int i = 0; i < uiInstance.styleSheets.count; i++)
-        // {
-        //     uiInstance.ElementAt(0).styleSheets.Add(uiInstance.styleSheets[i]);
-        // }
+        uiInstance = uiTree.Instantiate().Q<VisualElement>("container");
     }
 
     public virtual void Show()
     {
-        // uiDocument.rootVisualElement.Add(uiInstance.ElementAt(0));
-        // uiInstance.styleSheets.Add(uiInstance.styleSheets[0]);
         uiDocument.rootVisualElement.Add(uiInstance);
     }
     public virtual void Hide()
