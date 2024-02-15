@@ -1,17 +1,14 @@
 using System.Collections.Generic;
-using UnityEngine;
 using UnityEngine.UIElements;
 
+/// <summary>
+/// 화면 전환할수 있음
+/// </summary>
 public class UINavigation : Singleton<UINavigation>
 {
     private readonly Stack<UIViewIndex> history = new();
 
     private readonly Dictionary<UIViewIndex, UIView> views = new();
-
-    protected override void Awake()
-    {
-        base.Awake();
-    }
 
     private void Start()
     {
@@ -27,7 +24,7 @@ public class UINavigation : Singleton<UINavigation>
     
     private void Init()
     {
-        Clear();
+        // Clear();
         foreach (var view in GetComponents<UIView>())
         {
             views[view.ViewIndex] = view;
@@ -35,6 +32,11 @@ public class UINavigation : Singleton<UINavigation>
         Push(UIViewIndex.MAIN);
     }
 
+    /// <summary>
+    /// UIViewIndex에 해당하는 UIView로 이동
+    /// </summary>
+    /// <param name="uiViewIndex"></param>
+    /// <returns></returns>
     public UIView Push(UIViewIndex uiViewIndex)
     {
         if (history.Count > 0)
@@ -50,6 +52,10 @@ public class UINavigation : Singleton<UINavigation>
         return newView;
     }
 
+    /// <summary>
+    /// 이전 페이지로 돌아감
+    /// </summary>
+    /// <returns></returns>
     public UIView Pop()
     {
         // 현재 stack에 방문 기록이 1개밖에 없다면 main 페이지 리턴
