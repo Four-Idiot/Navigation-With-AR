@@ -341,7 +341,6 @@ MonoBehaviour:
   clientId: 5owwi58e0x
   clientSecret: lXGpAiiQneNpGFiffhq3XhEMT9xt4S2IkYXx2GQE
   staticMapBaseUrl: https://naveropenapi.apigw.ntruss.com/map-static/v2/raster
-  network: 0
 --- !u!4 &1167772129
 Transform:
   m_ObjectHideFlags: 0
@@ -480,7 +479,6 @@ MonoBehaviour:
   clientId: 5owwi58e0x
   clientSecret: 
   staticMapBaseUrl: https://naveropenapi.apigw.ntruss.com/map-static/v2/raster
-  network: 0
 --- !u!4 &2086533485
 Transform:
   m_ObjectHideFlags: 0
