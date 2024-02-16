@@ -1,24 +1,19 @@
 /// <summary>
 /// for static map api
 /// </summary>
-public class RequestMapDto
-{
-    public readonly double latitude;
-    public readonly double longitude;
-    public readonly uint width;
-    public readonly uint height;
-    public readonly uint level;
-    public readonly bool scale;
-    public readonly string markers;
-    
-    public RequestMapDto(double latitude, double longitude, uint width, uint height, uint level, bool scale, string markers)
+public record RequestMapDto(double Latitude, double Longitude, uint Width, uint Height, uint Level);
+/*{
+    public double Latitude { get;}
+    public double Longitude {get; init;}
+    public uint Width {get; init;}
+    public uint Height {get; init;}
+    public uint Level {get; init;}
+    public RequestMapDto(double latitude, double longitude, uint width, uint height, uint level = 15)
     {
         this.latitude = latitude;
         this.longitude = longitude;
         this.width = width;
         this.height = height;
         this.level = level;
-        this.scale = scale;
-        this.markers = markers;
     }
-}
+}*/
