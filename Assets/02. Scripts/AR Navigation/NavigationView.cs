@@ -33,16 +33,8 @@ public class NavigationView : UIView
 
     private async void OnClickStaticMapTestButton(ClickEvent evt)
     {
-        var response = await Config.Instance.Repository
-            .FindMapByCurrentLocation(
-                new(
-                    37.3591614, 127.1054221, 1024,
-                    1024, 15, true, string.Empty
-                ));
-        Debug.Log(response.binaryImage);
-        Texture2D tex = new(350, 450);
-        tex.LoadImage(response.binaryImage);
-        image.image = tex;
+        var texture = await Config.Instance.NavigationService.MapByCurrentLocation();
+        image.image = texture;
     }
 
     public override void Show()

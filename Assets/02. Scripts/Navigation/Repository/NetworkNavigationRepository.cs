@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using RestSharp;
 using UnityEngine;
 
-public class NetworkRepository : IRepository
+public class NetworkNavigationRepository : INavigationRepository
 {
     private readonly string clientId;
     private readonly string clientSecret;
@@ -11,8 +11,9 @@ public class NetworkRepository : IRepository
 
     private RestClient staticMapClient;
     private readonly CancellationTokenSource tokenSource = new();
+    private Coords currentCoords;
 
-    public NetworkRepository(string clientId, string clientSecret, string staticMapBaseUrl)
+    public NetworkNavigationRepository(string clientId, string clientSecret, string staticMapBaseUrl)
     {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
@@ -24,10 +25,10 @@ public class NetworkRepository : IRepository
     {
         RestRequest request = new RestRequest();
         request
-            .AddParameter("w", requestMapDto.width)
-            .AddParameter("h", requestMapDto.height)
-            .AddParameter("center", $"{requestMapDto.longitude},{requestMapDto.latitude}")
-            .AddParameter("level", requestMapDto.level)
+            .AddParameter("w", requestMapDto.Width)
+            .AddParameter("h", requestMapDto.Height)
+            .AddParameter("center", $"{requestMapDto.Longitude},{requestMapDto.Latitude}")
+            .AddParameter("level", requestMapDto.Level)
             .AddParameter("format", "png8");
         
         Debug.Log("Start DownloadData");
@@ -35,6 +36,11 @@ public class NetworkRepository : IRepository
         Debug.Log("End DownloadData");
         Debug.Log(imageBinary.Length);
         return new ResponseMapDto(imageBinary);
+    }
+
+    public async Task<Coords> GetCurrentLocation()
+    {
+        return currentCoords;
     }
 
     private void InitStaticMapClient()
