@@ -1,5 +1,8 @@
 using UnityEngine;
 
+/// <summary>
+/// 프로젝트 설정
+/// </summary>
 public class Config : Singleton<Config>
 {
     [SerializeField]
