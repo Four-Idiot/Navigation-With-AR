@@ -1,0 +1,11 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/02.%20Scripts/Main/MainMenu.uss?fileID=7433441132597879392&amp;guid=db67aa8c0dace2245af07a57eae99370&amp;type=3#MainMenu" />
+    <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/Noto_Sans/NotoSansKR-Regular.ttf?fileID=12800000&amp;guid=8d80be3503613334a8aca50792524904&amp;type=3#NotoSansKR-Regular&apos;); -unity-font-definition: initial;">
+        <ui:VisualElement name="head" style="flex-grow: 1; height: auto; padding-top: 0; padding-left: 0; padding-right: 0; padding-bottom: 0;">
+            <ui:VisualElement name="logo-container" style="flex-grow: initial; justify-content: center; align-items: center; flex-shrink: initial; align-self: center; padding-top: 298.74px;">
+                <ui:Image name="logo-image" style="background-image: url(&apos;project://database/Assets/Sprites/1.%20%EB%A1%9C%EB%94%A9%20%EB%B0%8F%20%ED%99%88/Logo_%EC%A0%9C%EB%AC%BC%ED%8F%AC.png?fileID=2800000&amp;guid=b4731f61cfcd5eb4687967c53ba059c0&amp;type=3#Logo_제물포&apos;); flex-grow: initial; height: 79px; width: 79px;" />
+                <ui:Label tabindex="-1" text="Station - J" parse-escape-sequences="true" display-tooltip-when-elided="true" name="logo-label" style="font-size: 32px; height: 40px; -unity-text-align: middle-center; -unity-font: url(&apos;project://database/Assets/Fonts/Noto_Sans/NotoSansKR-SemiBold.ttf?fileID=12800000&amp;guid=38cefb93e463b3040930e7d14ae0d95a&amp;type=3#NotoSansKR-SemiBold&apos;);" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
