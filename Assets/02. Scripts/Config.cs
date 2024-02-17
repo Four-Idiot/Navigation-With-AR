@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 /// <summary>
@@ -21,26 +20,52 @@ public class Config : Singleton<Config>
     private bool network = false;
 
     private INavigationRepository navigationRepository;
+    private NavigationService navigationService;
 
-    public NavigationService NavigationService { get; private set; }
+    private IGpsRepository gpsRepository;
+    private GpsService gpsService;
 
     protected override void Awake()
     {
         base.Awake();
-        ConfigRepository();
+        Inject();
+    }
+
+    private void Inject()
+    {
         ConfigNavigationService();
+        ConfigGpsService();
     }
 
-    private void ConfigNavigationService()
+    private NavigationService ConfigNavigationService()
     {
-        NavigationService = new NavigationService(navigationRepository);
+        if (navigationService == null)
+            navigationService = new NavigationService(ConfigNavigationRepository(), ConfigGpsService());
+        return navigationService;
     }
 
-    private void ConfigRepository()
+    private GpsService ConfigGpsService()
     {
-        if (network)
-            navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
-        else
-            navigationRepository = new LocalNavigationRepository();
+        if (gpsService == null)
+            gpsService = new GpsService(ConfigGpsRepository());
+        return gpsService;
+    }
+
+    private IGpsRepository ConfigGpsRepository()
+    {
+        if (gpsRepository == null)
+            gpsRepository = null;
+        // gpsRepository = new AndroidGpsRepository();
+        return gpsRepository;
+    }
+
+    private INavigationRepository ConfigNavigationRepository()
+    {
+        if (navigationRepository == null)
+            if (network)
+                navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
+            else
+                navigationRepository = new LocalNavigationRepository();
+        return navigationRepository;
     }
 }

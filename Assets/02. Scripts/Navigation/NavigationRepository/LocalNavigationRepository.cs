@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class LocalNavigationRepository : INavigationRepository
 {
-    private Coords currentLocation;
     private readonly CancellationTokenSource tokenSource = new();
 
     public async Task<ResponseMapDto> FindMapByCurrentLocation(RequestMapDto requestMapDto)
@@ -16,10 +15,5 @@ public class LocalNavigationRepository : INavigationRepository
         var binaryImage = await File.ReadAllBytesAsync(filePath);
         Debug.Log($"Finish Local Image Loading: result length = {binaryImage.Length}");
         return new ResponseMapDto(binaryImage);
-    }
-
-    public async Task<Coords> GetCurrentLocation()
-    {
-        return currentLocation;
     }
 }

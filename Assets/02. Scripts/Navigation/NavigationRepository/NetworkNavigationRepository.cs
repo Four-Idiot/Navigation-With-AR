@@ -1,3 +1,4 @@
+using System;
 using System.Threading;
 using System.Threading.Tasks;
 using RestSharp;
@@ -29,15 +30,32 @@ public class NetworkNavigationRepository : INavigationRepository
             .AddParameter("h", requestMapDto.Height)
             .AddParameter("center", $"{requestMapDto.Longitude},{requestMapDto.Latitude}")
             .AddParameter("level", requestMapDto.Level)
-            .AddParameter("format", "png8");
-        
-        Debug.Log("Start DownloadData");
+            .AddParameter("format", "png8")
+            .AddParameter("scale", 2);
+
+        Debug.Log($"StaticMap API Request Start - {DateTime.Now}");
         byte[] imageBinary = await staticMapClient.DownloadDataAsync(request, tokenSource.Token);
-        Debug.Log("End DownloadData");
-        Debug.Log(imageBinary.Length);
+        Debug.Log($"StaticMap API Request Finish - {DateTime.Now}");
         return new ResponseMapDto(imageBinary);
     }
 
+    public async Task<ResponseMapDto> FindMapByCurrentLocationWithMarker(RequestMapDto requestMapDto)
+    {
+        RestRequest request = new RestRequest();
+        request
+            .AddParameter("w", requestMapDto.Width)
+            .AddParameter("h", requestMapDto.Height)
+            .AddParameter("center", $"{requestMapDto.Longitude},{requestMapDto.Latitude}")
+            .AddParameter("level", requestMapDto.Level)
+            .AddParameter("format", "png8")
+            .AddParameter("scale", 2);
+
+        Debug.Log($"StaticMap API Request Start - {DateTime.Now}");
+        byte[] imageBinary = await staticMapClient.DownloadDataAsync(request, tokenSource.Token);
+        Debug.Log($"StaticMap API Request Finish - {DateTime.Now}");
+        return new ResponseMapDto(imageBinary);
+    }
+    
     public async Task<Coords> GetCurrentLocation()
     {
         return currentCoords;
