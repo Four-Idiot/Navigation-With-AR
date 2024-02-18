@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="hospital-marker" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute;">
+    <ui:VisualElement name="hospital-marker" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); position: absolute; transform-origin: left top;">
         <ui:VisualElement name="icon" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%EC%A7%80%EB%8F%84%EB%A7%88%EC%BB%A4/Icon_%EB%B3%91%EC%9B%90%EB%A7%88%EC%BB%A4.png?fileID=2800000&amp;guid=ffeb922783b8c4d4aadbe24e4072c92d&amp;type=3#Icon_병원마커&apos;); width: 59.08px; height: 65.06px; position: relative; top: -100%; left: -50%;" />
     </ui:VisualElement>
 </ui:UXML>
