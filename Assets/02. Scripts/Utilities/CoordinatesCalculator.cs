@@ -5,6 +5,7 @@ public static class CoordinatesCalculator
 {
     private const double EarthRadius = 6371.01; // 지구 반경 (km)
     
+    // 두개의 좌표의 거리를 계산
     public static double CalculateDistanceBetweenCoords(Coords start, Coords dest)
     {
         // 위도, 경도를 라디안으로 변환

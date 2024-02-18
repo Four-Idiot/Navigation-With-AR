@@ -1,1 +1,0 @@
-public record ResponseMapDto(byte[] BinaryImage);

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using UnityEngine;
 
 /// <summary>
@@ -25,6 +26,9 @@ public class Config : Singleton<Config>
     private IGpsRepository gpsRepository;
     private GpsService gpsService;
 
+    private IPoiRepository poiRepository;
+    private PoiService poiService;
+
     protected override void Awake()
     {
         base.Awake();
@@ -33,39 +37,65 @@ public class Config : Singleton<Config>
 
     private void Inject()
     {
-        ConfigNavigationService();
-        ConfigGpsService();
+        NavigationService();
+        GpsService();
+        PoiService();
     }
 
-    private NavigationService ConfigNavigationService()
+    public PoiService PoiService()
+    {
+        if (poiService == null)
+            poiService = new PoiService(PoiRepository());
+        return poiService;
+    }
+
+    private IPoiRepository PoiRepository()
+    {
+        if (poiRepository == null)
+            poiRepository = new LocalPoiRepository();
+        return poiRepository;
+    }
+
+    public NavigationService NavigationService()
     {
         if (navigationService == null)
-            navigationService = new NavigationService(ConfigNavigationRepository(), ConfigGpsService());
+            navigationService = new NavigationService(NavigationRepository(), GpsService(), PoiService());
         return navigationService;
     }
 
-    private GpsService ConfigGpsService()
+    public GpsService GpsService()
     {
         if (gpsService == null)
-            gpsService = new GpsService(ConfigGpsRepository());
+            gpsService = new GpsService(GpsRepository());
         return gpsService;
     }
 
-    private IGpsRepository ConfigGpsRepository()
+    private IGpsRepository GpsRepository()
     {
         if (gpsRepository == null)
-            gpsRepository = null;
-        // gpsRepository = new AndroidGpsRepository();
+        {
+#if UNITY_EDITOR
+            gpsRepository = new LocalGpsRepository();
+#else
+            gpsRepository = new AndroidGpsRepository();
+#endif
+        }
         return gpsRepository;
     }
 
-    private INavigationRepository ConfigNavigationRepository()
+    private INavigationRepository NavigationRepository()
     {
         if (navigationRepository == null)
+        {
+#if UNITY_EDITOR
             if (network)
                 navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
             else
                 navigationRepository = new LocalNavigationRepository();
+#else
+                navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
+#endif
+        }
         return navigationRepository;
     }
 }

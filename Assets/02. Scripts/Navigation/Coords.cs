@@ -1,1 +1,1 @@
-﻿public record Coords(double Latitude, double Longitude);
+﻿public record Coords(float Longitude, float Latitude);
