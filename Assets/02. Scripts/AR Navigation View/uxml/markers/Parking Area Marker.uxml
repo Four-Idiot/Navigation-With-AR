@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/02.%20Scripts/AR%20Navigation%20View/uss/marker.uss?fileID=7433441132597879392&amp;guid=a0137ea0d16217c46ad19dc070bfaf9c&amp;type=3#marker" />
-    <ui:VisualElement name="parking-area-marker" class="marker" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+    <ui:VisualElement name="parking-area-marker" class="marker public-marker" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
         <ui:VisualElement class="marker-icon" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%EC%A7%80%EB%8F%84%EB%A7%88%EC%BB%A4/Icon_%EC%A3%BC%EC%B0%A8%EC%9E%A5%EB%A7%88%EC%BB%A4.png?fileID=2800000&amp;guid=e9e57f0635ffac340b7fab5292651f13&amp;type=3#Icon_주차장마커&apos;); width: 57.23px; height: 62.31px;" />
     </ui:VisualElement>
 </ui:UXML>

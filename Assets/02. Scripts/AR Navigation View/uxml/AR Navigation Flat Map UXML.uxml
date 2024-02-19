@@ -9,7 +9,7 @@
         </ui:VisualElement>
         <ui:VisualElement name="footer" style="flex-grow: 0; background-color: rgb(255, 255, 255); height: 73.31px; flex-direction: row; position: absolute; bottom: 0; width: 100%; justify-content: center; align-items: flex-end; padding-bottom: 9px;">
             <ui:VisualElement name="buttongroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; padding-left: 45px; padding-right: 19px; justify-content: flex-start; align-items: center;">
-                <ui:VisualElement name="all-button" class="category-button unselected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center;">
+                <ui:VisualElement name="all-button" class="category-button selected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center;">
                     <ui:Image name="Image" style="width: 21.36px; height: 18.33px; margin-top: 0; margin-left: 0; background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%ED%95%98%EB%8B%A8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%83%AD/Icon_%EC%A0%84%EC%B2%B4%EB%B3%B4%EA%B8%B0.png?fileID=2800000&amp;guid=96eba3adef360944b8ef29b303e5d24d&amp;type=3#Icon_전체보기&apos;); margin-right: 0; margin-bottom: 0; align-self: center;" />
                     <ui:Label tabindex="-1" text="전체보기" display-tooltip-when-elided="true" style="width: 45px; height: 14px; font-size: 12px; -unity-text-align: middle-center; margin-top: 8.82px; margin-right: 0; margin-left: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-self: center;" />
                 </ui:VisualElement>
