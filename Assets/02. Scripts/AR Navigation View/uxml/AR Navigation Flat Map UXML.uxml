@@ -1,0 +1,31 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/02.%20Scripts/AR%20Navigation%20View/uss/flat%20navigation.uss?fileID=7433441132597879392&amp;guid=7a49f8e1879f79e47b2ed497275ad47e&amp;type=3#flat navigation" />
+    <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgb(255, 255, 255);">
+        <ui:VisualElement name="map-container" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
+            <ui:VisualElement name="flat-map" style="background-color: rgba(0, 0, 0, 0); flex-grow: 1;" />
+        </ui:VisualElement>
+        <ui:VisualElement name="header" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0);">
+            <ui:Image name="back-button" style="width: 40.74px; height: 42.46px; margin-top: 39.4px; margin-left: 11.08px; background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/Icon_%EB%92%A4%EB%A1%9C%EA%B0%80%EA%B8%B0%EB%B2%84%ED%8A%BC.png?fileID=2800000&amp;guid=599c1f8faa46e7649a71171e1af3630b&amp;type=3#Icon_뒤로가기버튼&apos;);" />
+        </ui:VisualElement>
+        <ui:VisualElement name="footer" style="flex-grow: 0; background-color: rgb(255, 255, 255); height: 73.31px; flex-direction: row; position: absolute; bottom: 0; width: 100%; justify-content: center; align-items: flex-end; padding-bottom: 9px;">
+            <ui:VisualElement name="buttongroup" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); flex-direction: row; padding-left: 45px; padding-right: 19px; justify-content: flex-start; align-items: center;">
+                <ui:VisualElement name="all-button" class="category-button unselected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center;">
+                    <ui:Image name="Image" style="width: 21.36px; height: 18.33px; margin-top: 0; margin-left: 0; background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%ED%95%98%EB%8B%A8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%83%AD/Icon_%EC%A0%84%EC%B2%B4%EB%B3%B4%EA%B8%B0.png?fileID=2800000&amp;guid=96eba3adef360944b8ef29b303e5d24d&amp;type=3#Icon_전체보기&apos;); margin-right: 0; margin-bottom: 0; align-self: center;" />
+                    <ui:Label tabindex="-1" text="전체보기" display-tooltip-when-elided="true" style="width: 45px; height: 14px; font-size: 12px; -unity-text-align: middle-center; margin-top: 8.82px; margin-right: 0; margin-left: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-self: center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="public-button" class="category-button unselected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center; padding-left: 35px;">
+                    <ui:Image name="Image" style="width: 21.36px; height: 18.33px; margin-top: 0; margin-left: 0; background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%ED%95%98%EB%8B%A8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%83%AD/Icon_%EA%B3%B5%EA%B3%B5%EC%9E%A5%EC%86%8C.png?fileID=2800000&amp;guid=a022cec38912eb3449b46756213efd15&amp;type=3#Icon_공공장소&apos;); margin-right: 0; margin-bottom: 0; align-self: center;" />
+                    <ui:Label tabindex="-1" text="공공장소" display-tooltip-when-elided="true" style="width: 45px; height: 14px; font-size: 12px; -unity-text-align: middle-center; margin-top: 8.82px; margin-right: 0; margin-left: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-self: center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="hospital-button" class="category-button unselected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center; margin-left: 49px;">
+                    <ui:Image name="Image" style="width: 21.36px; height: 18.33px; margin-top: 0; margin-left: 0; background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%ED%95%98%EB%8B%A8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%83%AD/Icon_%EB%B3%91%EC%9B%90.png?fileID=2800000&amp;guid=3886f75f9a69594459aa6de8b1468203&amp;type=3#Icon_병원&apos;); margin-right: 0; margin-bottom: 0; align-self: center;" />
+                    <ui:Label tabindex="-1" text="병원" display-tooltip-when-elided="true" style="width: 45px; height: 14px; font-size: 12px; -unity-text-align: middle-center; margin-top: 8.82px; margin-right: 0; margin-left: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-self: center;" />
+                </ui:VisualElement>
+                <ui:VisualElement name="camera-button" class="category-button unselected-button" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); align-self: center; margin-left: 35px;">
+                    <ui:Image name="Image" style="width: 21.36px; height: 18.33px; margin-top: 0; margin-left: 0; background-image: url(&apos;project://database/Assets/Sprites/Station-J_Resources/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%ED%95%98%EB%8B%A8%EC%B9%B4%ED%85%8C%EA%B3%A0%EB%A6%AC%ED%83%AD/Icon_%ED%8F%AC%ED%86%A0%EC%A1%B4%EB%8F%84%EC%8A%A8%ED%8A%B8.png?fileID=2800000&amp;guid=0f827556b7a50f446b9f38e6162421e2&amp;type=3#Icon_포토존도슨트&apos;); margin-right: 0; margin-bottom: 0; align-self: center;" />
+                    <ui:Label tabindex="-1" text="포토존/도슨트" display-tooltip-when-elided="true" style="width: 71px; height: 14px; font-size: 12px; -unity-text-align: middle-center; margin-top: 8.82px; margin-right: 0; margin-left: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-self: center;" />
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

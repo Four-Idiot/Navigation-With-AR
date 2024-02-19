@@ -1,0 +1,16 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+.selected-button {
+    color: #3498DB;
+}
+
+.selected-button Image {
+    -unity-background-image-tint-color: #3498DB;
+}
+
+.unselected-button {
+    color: #B9BCBE;
+}

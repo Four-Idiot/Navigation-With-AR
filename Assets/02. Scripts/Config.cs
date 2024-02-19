@@ -26,8 +26,8 @@ public class Config : Singleton<Config>
     private IGpsRepository gpsRepository;
     private GpsService gpsService;
 
-    private IPoiRepository poiRepository;
-    private PoiService poiService;
+    private IMarkerRepository markerRepository;
+    private MarkerService markerService;
 
     protected override void Awake()
     {
@@ -42,18 +42,18 @@ public class Config : Singleton<Config>
         PoiService();
     }
 
-    public PoiService PoiService()
+    public MarkerService PoiService()
     {
-        if (poiService == null)
-            poiService = new PoiService(PoiRepository());
-        return poiService;
+        if (markerService == null)
+            markerService = new MarkerService(PoiRepository());
+        return markerService;
     }
 
-    private IPoiRepository PoiRepository()
+    private IMarkerRepository PoiRepository()
     {
-        if (poiRepository == null)
-            poiRepository = new LocalPoiRepository();
-        return poiRepository;
+        if (markerRepository == null)
+            markerRepository = new LocalMarkerRepository();
+        return markerRepository;
     }
 
     public NavigationService NavigationService()
