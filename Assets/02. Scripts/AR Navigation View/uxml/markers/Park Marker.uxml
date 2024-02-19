@@ -1,3 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <ui:VisualElement name="park-marker" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%EC%A7%80%EB%8F%84%EB%A7%88%EC%BB%A4/Icon_%EA%B3%B5%EC%9B%90%EB%A7%88%EC%BB%A4.png?fileID=2800000&amp;guid=e3143c68c869b42419f01ed33b1d9b5c&amp;type=3#Icon_공원마커&apos;); width: 60px; height: 67.81px;" />
+    <Style src="project://database/Assets/02.%20Scripts/AR%20Navigation%20View/uss/marker.uss?fileID=7433441132597879392&amp;guid=a0137ea0d16217c46ad19dc070bfaf9c&amp;type=3#marker" />
+    <ui:VisualElement name="park-marker" class="marker" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0);">
+        <ui:VisualElement class="marker-icon" style="background-color: rgba(0, 0, 0, 0); background-image: url(&apos;project://database/Assets/Sprites/2.%20%EA%B8%B8%EC%B0%BE%EA%B8%B0/%EC%A7%80%EB%8F%84%EB%A7%88%EC%BB%A4/Icon_%EA%B3%B5%EC%9B%90%EB%A7%88%EC%BB%A4.png?fileID=2800000&amp;guid=e3143c68c869b42419f01ed33b1d9b5c&amp;type=3#Icon_공원마커&apos;); width: 60px; height: 67.81px;" />
+    </ui:VisualElement>
 </ui:UXML>

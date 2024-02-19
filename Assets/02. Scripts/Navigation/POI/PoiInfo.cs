@@ -9,7 +9,8 @@ public record PoiInfo(
     string Address,
     int OpenTime,
     int CloseTime,
-    Vector2 Direction = new()
+    float PositionX = 0,
+    float PositionY = 0
 );
 
 public enum PoiType

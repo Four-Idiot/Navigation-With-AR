@@ -1,0 +1,10 @@
+.marker {
+    position: absolute;
+    transform-origin: left top;
+}
+
+.marker-icon {
+    position: relative;
+    top: -100%;
+    left: -50%;
+}
