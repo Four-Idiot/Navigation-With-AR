@@ -10,12 +10,22 @@ public class MainView: UIView
     {
         base.Awake();
         navButton = uiInstance.Q<VisualElement>("navigation-button");
+    }
+
+    public override void Show()
+    {
+        base.Show();
         navButton.RegisterCallback<ClickEvent>(OnNavButtonClicked);
+    }
+
+    public override void Hide()
+    {
+        base.Hide();
+        navButton.UnregisterCallback<ClickEvent>(OnNavButtonClicked);
     }
 
     private void OnNavButtonClicked(ClickEvent evt)
     {
-        Debug.Log("Clicked");
         UINavigation.Instance.Push(UIViewIndex.AR_NAVIGATION);
     }
 }
