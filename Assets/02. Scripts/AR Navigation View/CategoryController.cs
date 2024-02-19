@@ -68,15 +68,15 @@ public class CategoryController
         });
         button.AddToClassList(unselectedButtonClassName);
     }
-    
-    public UQueryBuilder<VisualElement> FindMarker(VisualElement button)
+
+    private UQueryBuilder<VisualElement> FindMarker(VisualElement button)
     {
         return button.name switch
         {
             allButtonName => root.Query<VisualElement>(className: "marker"),
-            publicButtonName => root.Query<VisualElement>("public-marker"),
-            hospitalButtonName => root.Query<VisualElement>("hospital-marker"),
-            cameraButtonName => root.Query<VisualElement>("camera-marker"),
+            publicButtonName => root.Query<VisualElement>(className: "public-marker"),
+            hospitalButtonName => root.Query<VisualElement>(className: "hospital-marker"),
+            cameraButtonName => root.Query<VisualElement>(className: "camera-marker"),
         };
     }
 
