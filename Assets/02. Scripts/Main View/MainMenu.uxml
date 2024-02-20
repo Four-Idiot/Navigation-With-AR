@@ -1,5 +1,5 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
-    <Style src="project://database/Assets/02.%20Scripts/Main/MainMenu.uss?fileID=7433441132597879392&amp;guid=db67aa8c0dace2245af07a57eae99370&amp;type=3#MainMenu" />
+    <Style src="project://database/Assets/02.%20Scripts/Main%20View/MainMenu.uss?fileID=7433441132597879392&amp;guid=db67aa8c0dace2245af07a57eae99370&amp;type=3#MainMenu" />
     <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/Noto_Sans/NotoSansKR-Regular.ttf?fileID=12800000&amp;guid=8d80be3503613334a8aca50792524904&amp;type=3#NotoSansKR-Regular&apos;); -unity-font-definition: initial;">
         <ui:VisualElement name="head" style="flex-grow: 1; height: 206px; padding-top: 79px;">
             <ui:VisualElement name="logo-container" style="flex-grow: initial; justify-content: center; align-items: center; flex-shrink: initial;">
@@ -24,7 +24,7 @@
                 <ui:VisualElement name="ar-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 17px; padding-top: 128px; padding-right: 17px; background-color: rgb(187, 205, 229); border-bottom-left-radius: 48px;">
                     <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
                         <ui:Label tabindex="-1" text="AR 체험존" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
-                        <ui:Label tabindex="-1" text="포토존/도슨트." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
+                        <ui:Label tabindex="-1" text="포토존/도슨트" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
                     </ui:VisualElement>
                 </ui:VisualElement>
                 <ui:VisualElement name="vr-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 13px; padding-top: 121px; padding-right: 18px; padding-bottom: 10px; background-color: rgb(217, 224, 240); border-bottom-right-radius: 48px;">
