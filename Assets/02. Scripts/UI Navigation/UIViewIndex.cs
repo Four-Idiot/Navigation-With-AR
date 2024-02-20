@@ -3,5 +3,5 @@
 /// </summary>
 public enum UIViewIndex
 {
-    MAIN, AR_NAVIGATION,
+    MAIN, AR_NAVIGATION, MARKER_DETAIL
 }

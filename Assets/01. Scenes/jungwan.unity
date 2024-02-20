@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 1583662029}
   - component: {fileID: 1583662031}
   - component: {fileID: 1583662032}
+  - component: {fileID: 1583662033}
   m_Layer: 5
   m_Name: UIDocument
   m_TagString: Untagged
@@ -391,7 +392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 437bfc9aa1938034c8c2e0ee1550e2b3, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: df8b0afd448d76041b705addebaa3098, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 7aeba92e6d865cb40a0370427b64c927, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1583662028
 Transform:
@@ -454,3 +455,17 @@ MonoBehaviour:
   parkMarker: {fileID: 9197481963319205126, guid: 1d2d56a33995edf45a0dca5c8feab099, type: 3}
   parkingAreaMarker: {fileID: 9197481963319205126, guid: fd40fea5368cf1f4bad4bad4704c0a95, type: 3}
   toiletMarker: {fileID: 9197481963319205126, guid: 1fff203394c02324cac4d6c169796cf6, type: 3}
+--- !u!114 &1583662033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1583662026}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e2ca3400501487f95819f5acc75472e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ViewIndex>k__BackingField: 2
+  uiTree: {fileID: 9197481963319205126, guid: a23c57cb18f04fe44b739a53b8813f08, type: 3}
