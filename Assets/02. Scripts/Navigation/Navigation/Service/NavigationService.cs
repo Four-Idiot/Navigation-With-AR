@@ -7,30 +7,27 @@ public class NavigationService
 {
     private readonly INavigationRepository navigationRepository;
     private readonly GpsService gpsService;
-    private readonly PoiService poiService;
-    public NavigationService(INavigationRepository navigationRepository, GpsService gpsService, PoiService poiService)
+    private readonly MarkerService markerService;
+    public NavigationService(INavigationRepository navigationRepository, GpsService gpsService, MarkerService markerService)
     {
         this.navigationRepository = navigationRepository;
         this.gpsService = gpsService;
-        this.poiService = poiService;
+        this.markerService = markerService;
     }
 
     public async Task<Map> FindMapByCurrentLocation(int zoomLevel)
     {
         var findCoordsTask = gpsService.FindCurrentCoordinates();
-        var poiInfosTask = poiService.FindPoiInfo();
+        var poiInfosTask = markerService.FindPoiInfo();
         await Task.WhenAll(findCoordsTask, poiInfosTask);
 
         var currentCoords = findCoordsTask.Result;
         var poiInfos = poiInfosTask.Result;
 
         List<Coords> coords = new(); // API에 보낼 좌표값
-        List<PoiInfo> calculatedPoiInfo = new();
-        float currentScale = CalcScale(zoomLevel);
+        List<Marker> calculatedPoiInfo = new();
         foreach (var poiInfo in poiInfos)
         {
-            // float x = (poiInfo.Coords.Longitude - currentCoords.Longitude) * 6378 * Mathf.Cos(poiInfo.Coords.Latitude * Mathf.Deg2Rad) / currentScale * zoomLevel;
-            // float y = (poiInfo.Coords.Latitude - currentCoords.Latitude) * 6378 / currentScale * zoomLevel;
             CalcPosition(out float x, out float y, currentCoords, poiInfo.Coords, zoomLevel);
             calculatedPoiInfo.Add(poiInfo with { PositionX = x, PositionY = y });
             coords.Add(poiInfo.Coords);

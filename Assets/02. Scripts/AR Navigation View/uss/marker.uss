@@ -1,10 +1,23 @@
 .marker {
     position: absolute;
     transform-origin: left top;
+    transition-timing-function: ease-in-out;
+    transition-property: display, opacity;
+    transition-duration: 0.5s;
 }
 
 .marker-icon {
     position: relative;
     top: -100%;
     left: -50%;
+}
+
+.selected-marker {
+    opacity: 1;
+    display: flex;
+}
+
+.unselected-marker {
+    opacity: 0;
+    display: none;
 }

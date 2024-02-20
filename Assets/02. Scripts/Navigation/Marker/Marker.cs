@@ -1,8 +1,8 @@
 ﻿using UnityEngine;
 
-public record PoiInfo(
+public record Marker(
     int Id,
-    PoiType Type,
+    MarkerType Type,
     string Name,
     string BranchName,
     Coords Coords,
@@ -13,9 +13,12 @@ public record PoiInfo(
     float PositionY = 0
 );
 
-public enum PoiType
+public enum MarkerType
 {
-    CAFE,
-    RESTAURANT,
-    PUBLIC
+    DOSENT,
+    HOSPITAL,
+    METRO,
+    PARK,
+    PARKING_AREA,
+    TOILET,
 }

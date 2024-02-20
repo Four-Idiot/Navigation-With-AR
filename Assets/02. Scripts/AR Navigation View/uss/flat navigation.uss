@@ -1,0 +1,31 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.selected-button {
+    color: rgb(52, 152, 219);
+}
+
+.selected-button Image {
+    -unity-background-image-tint-color: rgb(52, 152, 219);
+}
+
+.unselected-button {
+    color: rgb(185, 188, 190);
+}
+
+.category-button {
+    transition-property: color;
+    transition-duration: 0.5s;
+}
+
+.category-button Image {
+    transition-property: -unity-background-image-tint-color;
+    transition-duration: 0.5s;
+}
+
+#container {
+    transition-property: opacity, display;
+    transition-duration: 0.5s;
+}
