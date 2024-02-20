@@ -82,7 +82,9 @@ public class NavigationView : UIView
 
     private async Task PaintMap()
     {
-        map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
+        if (map == null)
+            map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
+        
         mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
         mapElement.style.opacity = new StyleFloat(0f);
