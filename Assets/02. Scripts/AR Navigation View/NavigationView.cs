@@ -4,6 +4,7 @@ using System.Threading.Tasks;
 using UnityEngine;
 using UnityEngine.UIElements;
 using static MarkerType;
+using static UIViewIndex;
 
 /// <summary>
 /// 네비게이션 UI
@@ -30,7 +31,8 @@ public class NavigationView : UIView
     #endregion
 
     private NavigationService navigationService;
-    private VisualElement map;
+    private Map map;
+    private VisualElement mapElement;
     private int currentZoomLevel = 15;
     private const int widthHalf = 180;
     private const int heightHalf = 400;
@@ -38,7 +40,7 @@ public class NavigationView : UIView
     private VisualElement backButton;
 
     private CategoryController categoryController;
-    
+
     protected override void Awake()
     {
         base.Awake();
@@ -48,7 +50,7 @@ public class NavigationView : UIView
     {
         navigationService = Config.Instance.NavigationService();
         categoryController = new CategoryController(uiInstance);
-        map = uiInstance.Q<VisualElement>("flat-map");
+        mapElement = uiInstance.Q<VisualElement>("flat-map");
         backButton = uiInstance.Q<VisualElement>("back-button");
     }
 
@@ -57,35 +59,57 @@ public class NavigationView : UIView
         base.Show();
         categoryController.RegisterButtonCallback();
         backButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
-        PaintMapTest();
+        PaintMap();
     }
 
     public override void Hide()
     {
         base.Hide();
+        CleanMap();
+    }
+    private void CleanMap()
+    {
         categoryController.UnregisterCallback();
         backButton.UnregisterCallback<ClickEvent>(OnBackButtonClicked);
+        mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+        mapElement.style.opacity = new StyleFloat(0f);
     }
 
     private void OnBackButtonClicked(ClickEvent evt)
     {
         UINavigation.Instance.Pop();
     }
-    
-    private async Task PaintMapTest()
+
+    private async Task PaintMap()
     {
-        var currentMap = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
-        map.style.backgroundImage = new StyleBackground(currentMap.MapTexture);
-        map.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+        map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
+        mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
+        mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
+        mapElement.style.opacity = new StyleFloat(0f);
+        PaintMarker(map);
+        mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
+        mapElement.style.opacity = new StyleFloat(1f);
+    }
+    private void PaintMarker(Map currentMap)
+    {
         foreach (var markerInfo in currentMap.Markers)
         {
             var marker = GetMarkerVisualElement(markerInfo.Type);
             marker.style.translate = new StyleTranslate(
                 new Translate(widthHalf + markerInfo.PositionX, heightHalf - markerInfo.PositionY)
             );
+            VisualElement markerIcon = marker.Q<VisualElement>(className: "marker-icon");
+            markerIcon.RegisterCallback(delegate(ClickEvent _) { OnMarkerClicked(markerInfo); });
             uiInstance.Q<VisualElement>("flat-map").Add(marker);
         }
     }
+
+    private void OnMarkerClicked(Marker marker)
+    {
+        var markerDetailView = UINavigation.Instance.Push(MARKER_DETAIL) as MarkerDetailView;
+        markerDetailView.SetState(marker.Name, marker.BranchName, marker.Address);
+    }
+
     private VisualElement GetMarkerVisualElement(MarkerType type)
     {
         VisualElement marker = type switch

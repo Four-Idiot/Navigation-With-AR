@@ -1,5 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/02.%20Scripts/AR%20Navigation%20View/uss/flat%20navigation.uss?fileID=7433441132597879392&amp;guid=7a49f8e1879f79e47b2ed497275ad47e&amp;type=3#flat navigation" />
+    <Style src="project://database/Assets/02.%20Scripts/Main%20View/MainMenu.uss?fileID=7433441132597879392&amp;guid=db67aa8c0dace2245af07a57eae99370&amp;type=3#MainMenu" />
     <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgb(255, 255, 255);">
         <ui:VisualElement name="map-container" style="flex-grow: 0; background-color: rgba(0, 0, 0, 0); position: absolute; left: 0; top: 0; right: 0; bottom: 0;">
             <ui:VisualElement name="flat-map" style="background-color: rgba(0, 0, 0, 0); flex-grow: 1;" />

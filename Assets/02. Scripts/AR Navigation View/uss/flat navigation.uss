@@ -25,3 +25,7 @@
     transition-duration: 0.5s;
 }
 
+#container {
+    transition-property: opacity, display;
+    transition-duration: 0.5s;
+}

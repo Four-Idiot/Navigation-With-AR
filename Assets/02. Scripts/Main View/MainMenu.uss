@@ -1,9 +1,0 @@
-﻿* {
-    margin: 0px;
-    padding: 0px;
-}
-
-.menu-button:hover {
-    border-color: black;
-    border-width: 3px;
-}
