@@ -38,6 +38,7 @@ public class NavigationView : UIView
     private const int heightHalf = 400;
 
     private VisualElement backButton;
+    private SliderInt zoomLevelSlider; 
 
     private CategoryController categoryController;
 
@@ -49,9 +50,10 @@ public class NavigationView : UIView
     private void Init()
     {
         navigationService = Config.Instance.NavigationService();
-        categoryController = new CategoryController(uiInstance);
         mapElement = uiInstance.Q<VisualElement>("flat-map");
         backButton = uiInstance.Q<VisualElement>("back-button");
+        zoomLevelSlider = uiInstance.Q<SliderInt>("level-slider");
+        categoryController = new CategoryController(uiInstance);
     }
 
     public override void Show()
@@ -59,6 +61,7 @@ public class NavigationView : UIView
         base.Show();
         categoryController.RegisterButtonCallback();
         backButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
+        zoomLevelSlider.RegisterCallback<ChangeEvent<int>>(OnLevelSliderValueChanged);
         PaintMap();
     }
 
@@ -67,10 +70,19 @@ public class NavigationView : UIView
         base.Hide();
         CleanMap();
     }
+
+    private void OnLevelSliderValueChanged(ChangeEvent<int> evt)
+    {
+        currentZoomLevel = evt.newValue;
+        Debug.Log(currentZoomLevel);
+        PaintMap(true);
+    }
+    
     private void CleanMap()
     {
         categoryController.UnregisterCallback();
         backButton.UnregisterCallback<ClickEvent>(OnBackButtonClicked);
+        zoomLevelSlider.UnregisterCallback<ChangeEvent<int>>(OnLevelSliderValueChanged);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
         mapElement.style.opacity = new StyleFloat(0f);
     }
@@ -80,11 +92,12 @@ public class NavigationView : UIView
         UINavigation.Instance.Pop();
     }
 
-    private async Task PaintMap()
+    private async Task PaintMap(bool repaint = false)
     {
-        if (map == null)
+        if (map == null || repaint)
             map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
         
+        mapElement.Clear();
         mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
         mapElement.style.opacity = new StyleFloat(0f);
@@ -92,6 +105,8 @@ public class NavigationView : UIView
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
         mapElement.style.opacity = new StyleFloat(1f);
     }
+    
+    
     private void PaintMarker(Map currentMap)
     {
         foreach (var markerInfo in currentMap.Markers)

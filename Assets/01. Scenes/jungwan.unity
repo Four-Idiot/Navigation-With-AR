@@ -325,7 +325,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &654807157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -385,7 +385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientId: 5owwi58e0x
-  clientSecret: lXGpAiiQneNpGFiffhq3XhEMT9xt4S2IkYXx2GQE
+  clientSecret: 
   staticMapBaseUrl: https://naveropenapi.apigw.ntruss.com/map-static/v2/raster
   network: 1
 --- !u!4 &1167772129
