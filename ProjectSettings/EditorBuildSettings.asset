@@ -4,7 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/01. Scenes/jungwan.unity
+    guid: b3337beda87213040aca027c963d6d11
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 482601f1843b31547b27cf36b4e4a511, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: 0d5d7e06a5d39534cbfe409cd37b9f56, type: 2}

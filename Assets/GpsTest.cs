@@ -4,7 +4,9 @@ using UnityEngine.Android;
 
 public class GpsTest : MonoBehaviour
 {
-    private AndroidGpsRepository androidGpsRepository = new();
+    public static string debug = "debug";
+    
+    /*private AndroidGpsRepository androidGpsRepository = new();
 
     public float desiredAccuracyInMeters; //현재 위치로부터의 최대 오차를 지정하는 변수 (정확도)
     public float updateDistanceInMeters; //특정 거리 이상 이동하면 갱신되도록 지정하는 변수 (갱신 빈도)
@@ -67,7 +69,7 @@ public class GpsTest : MonoBehaviour
                 myLongitude = longitude;
                 return true; //true를 반환해서 정상적으로 정보를 줬음을 알림
         }
-    }
+    }*/
 
     private void OnGUI()
     {
@@ -75,6 +77,7 @@ public class GpsTest : MonoBehaviour
         style.fontSize = 54;
         style.normal.textColor = Color.green;
 
-        GUI.Label(new Rect(5, 0, Screen.width, 20), $"{myLatitude},{myLongitude}", style);
+        // GUI.Label(new Rect(5, 0, Screen.width, 20), $"{myLatitude},{myLongitude}", style);
+        GUI.Label(new Rect(5, 0, Screen.width, 20), $"{debug}", style);
     }
 }

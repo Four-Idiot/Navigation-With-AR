@@ -83,11 +83,7 @@ public class Config : Singleton<Config>
     {
         if (gpsRepository == null)
         {
-#if UNITY_EDITOR
             gpsRepository = new LocalGpsRepository();
-#else
-            gpsRepository = new AndroidGpsRepository();
-#endif
         }
         return gpsRepository;
     }
@@ -96,14 +92,10 @@ public class Config : Singleton<Config>
     {
         if (navigationRepository == null)
         {
-#if UNITY_EDITOR
             if (network)
                 navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
             else
                 navigationRepository = new LocalNavigationRepository();
-#else
-                navigationRepository = new NetworkNavigationRepository(clientId, clientSecret, staticMapBaseUrl);
-#endif
         }
         return navigationRepository;
     }
