@@ -29,6 +29,8 @@ public class Config : Singleton<Config>
     private IMarkerRepository markerRepository;
     private MarkerService markerService;
 
+    private CameraService cameraService;
+
     protected override void Awake()
     {
         base.Awake();
@@ -68,6 +70,13 @@ public class Config : Singleton<Config>
         if (gpsService == null)
             gpsService = new GpsService(GpsRepository());
         return gpsService;
+    }
+
+    public CameraService CameraService()
+    {
+        if (cameraService == null)
+            cameraService = new CameraService();
+        return cameraService;
     }
 
     private IGpsRepository GpsRepository()
