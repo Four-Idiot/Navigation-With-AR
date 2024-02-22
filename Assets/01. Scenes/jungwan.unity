@@ -338,8 +338,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c77cac429aea8bb4c83bd2f6c4c0e54a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  desiredAccuracyInMeters: 0
-  updateDistanceInMeters: 0
 --- !u!4 &654807158
 Transform:
   m_ObjectHideFlags: 0
@@ -385,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientId: 5owwi58e0x
-  clientSecret: 
+  clientSecret: MsRziIt7fbaKeeCC4sVUJqKWjCJspqqIfSlS6fxW
   staticMapBaseUrl: https://naveropenapi.apigw.ntruss.com/map-static/v2/raster
   network: 1
 --- !u!4 &1167772129

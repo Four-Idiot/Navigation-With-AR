@@ -14,6 +14,16 @@ public class MarkerDetailView : UIView
     private Label addressElement;
     private VisualElement backButton;
 
+    protected override void Awake()
+    {
+        base.Awake();
+        backgroundImageElement = uiInstance.Q<VisualElement>("background-image");
+        nameElement = uiInstance.Q<Label>("name");
+        addressElement = uiInstance.Q<Label>("address");
+        descriptionElement = uiInstance.Q<Label>("description");
+        backButton = uiInstance.Q<VisualElement>("back-button");
+    }
+
     public void SetState(string name = "", string description = "", string address = "", Texture2D backgroundImage = null)
     {
         this.name = name;
@@ -26,11 +36,6 @@ public class MarkerDetailView : UIView
     public override void Show()
     {
         base.Show();
-        backgroundImageElement = uiInstance.Q<VisualElement>("background-image");
-        nameElement = uiInstance.Q<Label>("name");
-        addressElement = uiInstance.Q<Label>("address");
-        descriptionElement = uiInstance.Q<Label>("description");
-        backButton = uiInstance.Q<VisualElement>("back-button");
         backButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
     }
 
