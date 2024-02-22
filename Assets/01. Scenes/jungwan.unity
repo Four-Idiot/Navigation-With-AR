@@ -383,7 +383,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clientId: 5owwi58e0x
-  clientSecret: MsRziIt7fbaKeeCC4sVUJqKWjCJspqqIfSlS6fxW
+  clientSecret: YP90PQqU55d5KEtNI6DpEa09SSsS0A7MxRZIz6mP
   staticMapBaseUrl: https://naveropenapi.apigw.ntruss.com/map-static/v2/raster
   network: 1
 --- !u!4 &1167772129

@@ -83,7 +83,13 @@ public class Config : Singleton<Config>
     {
         if (gpsRepository == null)
         {
+#if UNITY_EDITOR
             gpsRepository = new LocalGpsRepository();
+            Debug.Log("In Editor");
+#elif UNITY_ANDROID && !UNITY_EDITOR
+            gpsRepository = new AndroidGpsRepository(Input.location);
+            Debug.Log("In Android");
+#endif
         }
         return gpsRepository;
     }
