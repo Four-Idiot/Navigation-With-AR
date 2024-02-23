@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-public interface IGpsRepository
+public interface IGpsRepository: Component
 {
     public Task<Coords> FindCoordsByCurrentLocationOrDefault();
 }

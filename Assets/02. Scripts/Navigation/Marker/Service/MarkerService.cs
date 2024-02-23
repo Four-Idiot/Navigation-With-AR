@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-public class MarkerService
+public class MarkerService: Component
 {
     private readonly IMarkerRepository markerRepository;
 

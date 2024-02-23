@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-public class GpsService
+public class GpsService: Component
 {
     private readonly IGpsRepository gpsRepository;
 

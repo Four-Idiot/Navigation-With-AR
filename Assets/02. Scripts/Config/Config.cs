@@ -1,4 +1,4 @@
-using System.Collections.Generic;
+using System.Text;
 using UnityEngine;
 
 /// <summary>
@@ -35,6 +35,12 @@ public class Config : Singleton<Config>
     {
         base.Awake();
         Inject();
+    }
+
+    private void PrintConfigurations()
+    {
+        StringBuilder sb = new();
+        
     }
 
     private void Inject()

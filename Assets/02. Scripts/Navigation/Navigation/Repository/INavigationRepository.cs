@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-public interface INavigationRepository
+public interface INavigationRepository : Component
 {
-   public Task<MapResponseDto> FindMapByCurrentLocation(MapRequestDto mapRequestDto);
+    public Task<MapResponseDto> FindMapByCurrentLocation(MapRequestDto mapRequestDto);
 }

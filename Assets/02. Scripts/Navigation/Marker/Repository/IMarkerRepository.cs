@@ -1,6 +1,6 @@
 using System.Threading.Tasks;
 
-public interface IMarkerRepository
+public interface IMarkerRepository : Component
 {
     public Task<MarkerResponseDto> FindPoiInfo();
 }
