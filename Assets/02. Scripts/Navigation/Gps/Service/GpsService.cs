@@ -11,6 +11,6 @@ public class GpsService
 
     public async Task<Coords> FindCurrentCoordinates()
     {
-        return await gpsRepository.FindCoordsByCurrentLocation();
+        return await gpsRepository.FindCoordsByCurrentLocationOrDefault();
     }
 }
