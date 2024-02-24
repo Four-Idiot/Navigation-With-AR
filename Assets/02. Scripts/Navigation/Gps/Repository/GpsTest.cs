@@ -4,7 +4,7 @@ using UnityEngine.Android;
 
 public class GpsTest : MonoBehaviour
 {
-    public static string debug = "debug";
+    public static string DebugMessage = "For Debug";
     
     /*private AndroidGpsRepository androidGpsRepository = new();
 
@@ -75,9 +75,9 @@ public class GpsTest : MonoBehaviour
     {
         GUIStyle style = new GUIStyle();
         style.fontSize = 54;
-        style.normal.textColor = Color.green;
+        style.normal.textColor = Color.black;
 
         // GUI.Label(new Rect(5, 0, Screen.width, 20), $"{myLatitude},{myLongitude}", style);
-        GUI.Label(new Rect(5, 0, Screen.width, 20), $"{debug}", style);
+        GUI.Label(new Rect(5, 0, Screen.width, 20), $"{DebugMessage}", style);
     }
 }

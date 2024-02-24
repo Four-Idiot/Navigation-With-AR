@@ -1,10 +1,11 @@
 ﻿using System.Threading.Tasks;
 using UnityEngine;
+using UnityEngine.Android;
 using static UnityEngine.LocationServiceStatus;
 
 public class AndroidGpsRepository : IGpsRepository
 {
-    private LocationService locationService;
+    private readonly LocationService locationService;
     private Coords coords = new(126.744577f, 37.713834f);
 
     public AndroidGpsRepository(LocationService locationService)
@@ -12,11 +13,19 @@ public class AndroidGpsRepository : IGpsRepository
         this.locationService = locationService;
     }
 
-    public async Task StartLocationService()
+    private async Task StartLocationService()
     {
-        if (!locationService.isEnabledByUser)
-            Debug.Log("LocationService is not enabled by user");
+        if (!Permission.HasUserAuthorizedPermission(Permission.FineLocation))
+        {
+           Permission.RequestUserPermission(Permission.FineLocation); 
+        }
 
+        if (!locationService.isEnabledByUser)
+        {
+            Debug.Log("LocationService is not enabled by user");
+            return;
+        }
+        
         locationService.Start();
         int maxWait = 5;
         while (locationService.status == Initializing && maxWait > 0)
@@ -58,10 +67,12 @@ public class AndroidGpsRepository : IGpsRepository
         if (locationService.isEnabledByUser && locationService.status == Running)
         {
             var lastLocation = locationService.lastData;
-            findCoords = new(lastLocation.longitude, lastLocation.longitude);
+            findCoords = new(lastLocation.longitude, lastLocation.latitude);
             coords = findCoords;
         }
-        return await Task.FromResult(findCoords ?? coords);
+        Coords result = findCoords ?? coords;
+        GpsTest.DebugMessage = $"{result.Longitude} / {result.Latitude}";
+        return await Task.FromResult(result);
     }
 
 }

@@ -1,3 +1,5 @@
+using System;
+using System.Reflection;
 using System.Text;
 using UnityEngine;
 
@@ -35,12 +37,6 @@ public class Config : Singleton<Config>
     {
         base.Awake();
         Inject();
-    }
-
-    private void PrintConfigurations()
-    {
-        StringBuilder sb = new();
-        
     }
 
     private void Inject()
@@ -111,4 +107,6 @@ public class Config : Singleton<Config>
         }
         return navigationRepository;
     }
+
+
 }
