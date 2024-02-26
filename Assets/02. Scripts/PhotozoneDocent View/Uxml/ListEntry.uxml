@@ -1,0 +1,14 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/02.%20Scripts/Container/Container_USS.uss?fileID=7433441132597879392&amp;guid=db67aa8c0dace2245af07a57eae99370&amp;type=3#Container_USS" />
+    <ui:VisualElement name="photozone-list-item" style="background-color: rgba(0, 0, 0, 0); width: 336px; height: 200px; margin-top: 11px; margin-bottom: 11px;">
+        <ui:VisualElement name="display-image" style="background-color: rgba(255, 255, 255, 0); width: 336px; height: 136px; border-left-width: 1px; border-right-width: 1px; border-top-width: 1px; border-bottom-width: 1px; border-left-color: rgb(0, 0, 0); border-right-color: rgb(0, 0, 0); border-top-color: rgb(0, 0, 0); border-bottom-color: rgb(0, 0, 0);" />
+        <ui:VisualElement style="flex-grow: 1; background-color: rgb(52, 152, 219); flex-direction: column; align-items: flex-start; padding-left: 9px; justify-content: center; padding-top: 11px; padding-bottom: 12px;">
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0);">
+                <ui:Label tabindex="-1" text="포토존 제목" display-tooltip-when-elided="true" name="name" style="font-size: 20px;" />
+            </ui:VisualElement>
+            <ui:VisualElement style="background-color: rgba(0, 0, 0, 0);">
+                <ui:Label tabindex="-1" text="포토존 설명" display-tooltip-when-elided="true" name="description" style="font-size: 15px;" />
+            </ui:VisualElement>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>
