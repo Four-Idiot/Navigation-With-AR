@@ -1,0 +1,14 @@
+.selected-tab-menu {
+    background-color: rgb(52, 152, 219);
+    align-items: center;
+    justify-content: center;
+    border-radius: 19px;
+}
+
+.unselected-tab-content {
+    display: none;
+}
+
+.unity-collection-view__item--selected {
+    background-color: initial;
+}

@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/02.%20Scripts/Main%20View/MainView_USS.uss?fileID=7433441132597879392&amp;guid=2f8ea9bf2d2087f4b91293995e4f6d47&amp;type=3#MainView_USS" />
-    <ui:VisualElement name="container" style="flex-grow: 1; background-color: rgb(255, 255, 255); -unity-font: url(&apos;project://database/Assets/Fonts/Noto_Sans/NotoSansKR-Regular.ttf?fileID=12800000&amp;guid=8d80be3503613334a8aca50792524904&amp;type=3#NotoSansKR-Regular&apos;); -unity-font-definition: initial;">
+    <ui:VisualElement name="container" class="menu" style="background-color: rgb(255, 255, 255);">
         <ui:VisualElement name="head" style="flex-grow: 1; height: 206px; padding-top: 79px;">
             <ui:VisualElement name="logo-container" style="flex-grow: initial; justify-content: center; align-items: center; flex-shrink: initial;">
                 <ui:Image name="logo-image" style="background-image: url(&apos;project://database/Assets/Sprites/1.%20%EB%A1%9C%EB%94%A9%20%EB%B0%8F%20%ED%99%88/Logo_%EC%A0%9C%EB%AC%BC%ED%8F%AC.png?fileID=2800000&amp;guid=b4731f61cfcd5eb4687967c53ba059c0&amp;type=3#Logo_제물포&apos;); flex-grow: initial; height: 79px; width: 79px;" />
@@ -8,29 +8,37 @@
             </ui:VisualElement>
         </ui:VisualElement>
         <ui:VisualElement name="body" style="flex-grow: 1; height: 480px; padding-top: 20px;">
-            <ui:VisualElement name="button-container" style="flex-grow: 1; padding-right: 34px; padding-left: 34px; flex-direction: row; flex-wrap: wrap; align-items: center; height: 470px;">
-                <ui:VisualElement name="navigation-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 14px; padding-top: 171px; padding-right: 50px; padding-bottom: 10px; background-color: rgb(95, 126, 175); border-top-left-radius: 48px;">
-                    <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
-                        <ui:Label tabindex="-1" text="길찾기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
-                        <ui:Label tabindex="-1" text="AR 네비게이션" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+            <ui:VisualElement name="button-container" style="flex-grow: 1; flex-direction: row; flex-wrap: wrap; align-items: center; height: 470px; justify-content: center;">
+                <ui:VisualElement class="meun-button-container">
+                    <ui:VisualElement name="navigation-button" class="menu-button" style="padding-left: 14px; padding-top: 171px; padding-right: 50px; padding-bottom: 10px; background-color: rgb(95, 126, 175); border-top-left-radius: 48px; position: relative; align-self: flex-end;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                            <ui:Label tabindex="-1" text="길찾기" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0; font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
+                            <ui:Label tabindex="-1" text="AR 네비게이션" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left; margin-top: 0; margin-right: 0; margin-bottom: 0; margin-left: 0;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="senior-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 10px; padding-top: 144px; padding-right: 10px; background-color: rgb(97, 185, 208); border-top-right-radius: 48px;">
-                    <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
-                        <ui:Label tabindex="-1" text="&lt;line-height=57%&gt;스마트 &#10;경로당&lt;/line-height&gt;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="button-name" style="font-size: 28px; height: 64px; -unity-text-align: middle-left; text-overflow: clip;" />
-                        <ui:Label tabindex="-1" text="노래교실" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
+                <ui:VisualElement class="meun-button-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 50%;">
+                    <ui:VisualElement name="senior-button" class="menu-button" style="padding-left: 10px; padding-top: 144px; padding-right: 10px; background-color: rgb(97, 185, 208); border-top-right-radius: 48px; align-self: flex-start;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                            <ui:Label tabindex="-1" text="&lt;line-height=57%&gt;스마트 &#10;경로당&lt;/line-height&gt;" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="button-name" style="font-size: 28px; height: 64px; -unity-text-align: middle-left; text-overflow: clip;" />
+                            <ui:Label tabindex="-1" text="노래교실" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="ar-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 17px; padding-top: 128px; padding-right: 17px; background-color: rgb(187, 205, 229); border-bottom-left-radius: 48px;">
-                    <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
-                        <ui:Label tabindex="-1" text="AR 체험존" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
-                        <ui:Label tabindex="-1" text="포토존/도슨트." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
+                <ui:VisualElement class="meun-button-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 50%;">
+                    <ui:VisualElement name="ar-button" class="menu-button" style="padding-left: 17px; padding-top: 128px; padding-right: 17px; background-color: rgb(187, 205, 229); border-bottom-left-radius: 48px; align-self: flex-end;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 1;">
+                            <ui:Label tabindex="-1" text="AR 체험존" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
+                            <ui:Label tabindex="-1" text="포토존/도슨트." parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-description" style="height: 22px; -unity-text-align: middle-left;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
-                <ui:VisualElement name="vr-button" class="menu-button" style="flex-grow: 1; width: 50%; height: 50%; padding-left: 13px; padding-top: 121px; padding-right: 18px; padding-bottom: 10px; background-color: rgb(217, 224, 240); border-bottom-right-radius: 48px;">
-                    <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: flex-start; align-self: auto;">
-                        <ui:Label tabindex="-1" text="VR 체험존" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
-                        <ui:Label tabindex="-1" text="VR 드라마(과거)&#10;VR 산책 (현재)&#10;VR 아카이브 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="button-description" style="height: 66px; -unity-text-align: middle-left; white-space: normal; text-overflow: clip;" />
+                <ui:VisualElement class="meun-button-container" style="flex-grow: 1; background-color: rgba(0, 0, 0, 0); width: 50%; height: 50%;">
+                    <ui:VisualElement name="vr-button" class="menu-button" style="padding-left: 13px; padding-top: 121px; padding-right: 18px; padding-bottom: 10px; background-color: rgb(217, 224, 240); border-bottom-right-radius: 48px; align-self: flex-start;">
+                        <ui:VisualElement name="VisualElement" style="flex-grow: 1; align-items: flex-start; align-self: auto;">
+                            <ui:Label tabindex="-1" text="VR 체험존" parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" class="button-name" style="font-size: 28px; height: 32px; -unity-text-align: middle-left;" />
+                            <ui:Label tabindex="-1" text="VR 드라마(과거)&#10;VR 산책 (현재)&#10;VR 아카이브 " parse-escape-sequences="true" display-tooltip-when-elided="true" name="Label" enable-rich-text="true" class="button-description" style="height: 66px; -unity-text-align: middle-left; white-space: normal; text-overflow: clip;" />
+                        </ui:VisualElement>
                     </ui:VisualElement>
                 </ui:VisualElement>
             </ui:VisualElement>

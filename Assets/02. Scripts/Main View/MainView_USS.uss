@@ -1,4 +1,22 @@
 .menu-button:hover {
     border-color: black;
     border-width: 3px;
+    width: 152px;
+    transition-property: width, height;
+    transition-duration: 0.5s, 0.5s;
+    position: relative;
+    height: 240px;
+    transition-timing-function: ease-in, ease-in;
+    transition-delay: 0s, 0s;
+}
+
+.menu-button {
+    width: 146px;
+    height: 235px;
+}
+
+.meun-button-container {
+    flex-grow: 1;
+    width: 50%;
+    height: 50%;
 }

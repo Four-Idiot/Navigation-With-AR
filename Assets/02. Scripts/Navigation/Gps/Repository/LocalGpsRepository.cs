@@ -2,7 +2,7 @@ using System.Threading.Tasks;
 
 public class LocalGpsRepository: IGpsRepository
 {
-    public Task<Coords> FindCoordsByCurrentLocation()
+    public Task<Coords> FindCoordsByCurrentLocationOrDefault()
     {
         // 강의실 좌표
         var coords = new Coords(126.744577f, 37.713834f);

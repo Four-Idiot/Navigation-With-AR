@@ -1,9 +1,8 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class NavigationService
+public class NavigationService : Component
 {
     private readonly INavigationRepository navigationRepository;
     private readonly GpsService gpsService;

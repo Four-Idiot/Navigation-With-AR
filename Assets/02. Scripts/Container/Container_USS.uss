@@ -1,4 +1,6 @@
 * {
     margin: 0;
     padding: 0;
+    -unity-font: url('project://database/Assets/Fonts/Noto_Sans/NotoSansKR-Regular.ttf?fileID=12800000&guid=8d80be3503613334a8aca50792524904&type=3#NotoSansKR-Regular');
+    -unity-font-definition: initial;
 }

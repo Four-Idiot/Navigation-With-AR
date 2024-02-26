@@ -2,5 +2,5 @@
 
 public interface IGpsRepository
 {
-    public Task<Coords> FindCoordsByCurrentLocation();
+    public Task<Coords> FindCoordsByCurrentLocationOrDefault();
 }
