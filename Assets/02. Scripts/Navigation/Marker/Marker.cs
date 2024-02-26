@@ -1,6 +1,4 @@
-﻿using UnityEngine;
-
-public record Marker(
+﻿public record Marker(
     int Id,
     MarkerType Type,
     string Name,
@@ -15,10 +13,11 @@ public record Marker(
 
 public enum MarkerType
 {
-    DOSENT,
+    DOCENT,
     HOSPITAL,
     METRO,
     PARK,
     PARKING_AREA,
     TOILET,
+    PHOTOZONE,
 }

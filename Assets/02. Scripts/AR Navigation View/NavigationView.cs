@@ -38,7 +38,7 @@ public class NavigationView : UIView
     private const int heightHalf = 400;
 
     private VisualElement backButton;
-    private SliderInt zoomLevelSlider; 
+    private SliderInt zoomLevelSlider;
 
     private CategoryController categoryController;
 
@@ -77,7 +77,7 @@ public class NavigationView : UIView
         Debug.Log(currentZoomLevel);
         PaintMap(true);
     }
-    
+
     private void CleanMap()
     {
         categoryController.UnregisterCallback();
@@ -96,7 +96,7 @@ public class NavigationView : UIView
     {
         if (map == null || repaint)
             map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
-        
+
         mapElement.Clear();
         mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
@@ -105,8 +105,8 @@ public class NavigationView : UIView
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
         mapElement.style.opacity = new StyleFloat(1f);
     }
-    
-    
+
+
     private void PaintMarker(Map currentMap)
     {
         foreach (var markerInfo in currentMap.Markers)
@@ -131,12 +131,12 @@ public class NavigationView : UIView
     {
         VisualElement marker = type switch
         {
-            DOSENT => dosentMarker.Instantiate(),
+            DOCENT or MarkerType.PHOTOZONE => dosentMarker.Instantiate(),
             HOSPITAL => hospitalMarker.Instantiate(),
             METRO => metroMarker.Instantiate(),
             PARK => parkMarker.Instantiate(),
             PARKING_AREA => parkingAreaMarker.Instantiate(),
-            TOILET => toiletMarker.Instantiate()
+            TOILET => toiletMarker.Instantiate(),
         };
         return marker;
     }
