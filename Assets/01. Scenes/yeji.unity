@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44402242, g: 0.49316543, b: 0.5722324, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -444,7 +444,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1583662027
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -459,7 +459,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PanelSettings: {fileID: 11400000, guid: 437bfc9aa1938034c8c2e0ee1550e2b3, type: 2}
   m_ParentUI: {fileID: 0}
-  sourceAsset: {fileID: 9197481963319205126, guid: 841d95f5477b5aa46ac888b53b36f44b, type: 3}
+  sourceAsset: {fileID: 9197481963319205126, guid: 7aeba92e6d865cb40a0370427b64c927, type: 3}
   m_SortingOrder: 0
 --- !u!4 &1583662028
 Transform:
@@ -517,8 +517,8 @@ MonoBehaviour:
   <ViewIndex>k__BackingField: 1
   uiTree: {fileID: 9197481963319205126, guid: df8b0afd448d76041b705addebaa3098, type: 3}
   hospitalMarker: {fileID: 9197481963319205126, guid: 35fd714a1a65d974085aea89971d2871, type: 3}
-  dosentMarker: {fileID: 0}
-  metroMarker: {fileID: 0}
-  parkMarker: {fileID: 0}
-  parkingAreaMarker: {fileID: 0}
-  toiletMarker: {fileID: 0}
+  dosentMarker: {fileID: 9197481963319205126, guid: 898315a5ab4b9e14e9d67074df49a486, type: 3}
+  metroMarker: {fileID: 9197481963319205126, guid: 0cc27d331ed79e1458509b3344537048, type: 3}
+  parkMarker: {fileID: 9197481963319205126, guid: 1d2d56a33995edf45a0dca5c8feab099, type: 3}
+  parkingAreaMarker: {fileID: 9197481963319205126, guid: fd40fea5368cf1f4bad4bad4704c0a95, type: 3}
+  toiletMarker: {fileID: 9197481963319205126, guid: 1fff203394c02324cac4d6c169796cf6, type: 3}
