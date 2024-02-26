@@ -2,18 +2,19 @@
 using UnityEngine;
 using UnityEngine.UIElements;
 
-public class PhotozoneDocentView: UIView
+public class PhotozoneDocentView : UIView
 {
 
     private TabMenuController tabMenuController;
     private PoiListController poiListController;
     private MarkerService poiService;
-    
+    private VisualElement backButton;
+
     [SerializeField]
     private VisualTreeAsset listEntryTemplate;
     private ListView photozoneList;
     private ListView docentList;
-    
+
     protected override void Awake()
     {
         base.Awake();
@@ -28,6 +29,7 @@ public class PhotozoneDocentView: UIView
 
     private void InitElement()
     {
+        backButton = uiInstance.Q<VisualElement>("back-button");
         tabMenuController = new TabMenuController(uiInstance.Q<VisualElement>("container"));
         poiListController = new PoiListController();
         photozoneList = uiInstance.Q<ListView>("photozone-list");
@@ -39,6 +41,7 @@ public class PhotozoneDocentView: UIView
     public override async void Show()
     {
         base.Show();
+        backButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
         tabMenuController.RegisterTabCallbacks();
         var poiList = await poiService.FindPoiInfo();
         poiListController.InitializePoiList(listEntryTemplate, photozoneList, docentList, poiList);
@@ -48,5 +51,11 @@ public class PhotozoneDocentView: UIView
     {
         base.Hide();
         tabMenuController.UnregisterTabCallbacks();
+        backButton.UnregisterCallback<ClickEvent>(OnBackButtonClicked);
+    }
+
+    private void OnBackButtonClicked(ClickEvent evt)
+    {
+        UINavigation.Instance.Pop();
     }
 }

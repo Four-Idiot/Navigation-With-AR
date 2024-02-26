@@ -479,7 +479,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f3fa3f9f9b4d1a8b17fb475e469dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ViewIndex>k__BackingField: 1
+  <ViewIndex>k__BackingField: 0
   uiTree: {fileID: 9197481963319205126, guid: ea817958378f83c42a92cfd45c8b5fd1, type: 3}
 --- !u!114 &1583662032
 MonoBehaviour:
@@ -541,6 +541,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9ebb532875f44a19a36458b3b39e5bfc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ViewIndex>k__BackingField: 0
+  <ViewIndex>k__BackingField: 5
   uiTree: {fileID: 9197481963319205126, guid: 02ce7c542844a89479bbef8f37ce76f0, type: 3}
   listEntryTemplate: {fileID: 9197481963319205126, guid: 88b6b45784d447040ba57bbc22468c1d, type: 3}
