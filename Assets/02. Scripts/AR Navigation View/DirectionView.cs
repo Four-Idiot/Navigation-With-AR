@@ -1,13 +1,26 @@
+using System;
+using UnityEngine;
 using UnityEngine.UIElements;
 
-public class DirectionView: UIView
+public class DirectionView : UIView
 {
+
+    #region Elements
+
     private VisualElement backButton;
-    
-    protected override void Awake()
+    private VisualElement mapElement;
+    private Label destinationLabel;
+
+    #endregion
+
+    private NavigationService navigationService;
+
+    private void Start()
     {
-        base.Awake();
         backButton = uiInstance.Q<VisualElement>("back-button");
+        mapElement = uiInstance.Q<VisualElement>("flat-map");
+        destinationLabel = uiInstance.Q<Label>("destination-label");
+        navigationService = Config.Instance.NavigationService();
     }
 
     public override void Show()
@@ -21,7 +34,14 @@ public class DirectionView: UIView
         base.Hide();
         backButton.UnregisterCallback<ClickEvent>(OnBackButtonClicked);
     }
-    
+
+    public async void Init(PoiInfo poiInfo)
+    {
+        destinationLabel.text = poiInfo.Name;
+        var map = await navigationService.FindMapByCurrentLocation(poiInfo.Coords);
+        mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
+    }
+
     private void OnBackButtonClicked(ClickEvent evt)
     {
         UINavigation.Instance.Pop();

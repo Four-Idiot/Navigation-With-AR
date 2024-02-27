@@ -14,7 +14,23 @@ public class NavigationService : Component
         this.markerService = markerService;
     }
 
-    public async Task<Map> FindMapByCurrentLocation(int zoomLevel)
+    public async Task<Map> FindMapByCurrentLocation(Coords location)
+    {
+        MapRequestDto requestDto = new(
+            location.Latitude,
+            location.Longitude,
+            540,
+            1200,
+            15,
+            new List<Coords>()
+        );
+        var response = await navigationRepository.FindMapByCurrentLocation(requestDto);
+        Texture2D tex = new(1080, 2400);
+        tex.LoadImage(response.BinaryImage);
+        return new Map(tex);
+    }
+
+    public async Task<MapWithMarkers> FindMapWithMarkerByCurrentLocation(int zoomLevel)
     {
         var findCoordsTask = gpsService.FindCurrentCoordinates();
         var poiInfosTask = markerService.FindPoiInfo();
@@ -24,7 +40,7 @@ public class NavigationService : Component
         var poiInfos = poiInfosTask.Result;
 
         List<Coords> coords = new(); // API에 보낼 좌표값
-        List<Marker> calculatedPoiInfo = new();
+        List<PoiInfo> calculatedPoiInfo = new();
         foreach (var poiInfo in poiInfos)
         {
             CalcPosition(out float x, out float y, currentCoords, poiInfo.Coords, zoomLevel);
@@ -39,7 +55,7 @@ public class NavigationService : Component
                 ));
         Texture2D tex = new(1080, 2400);
         tex.LoadImage(response.BinaryImage);
-        return new Map(tex, currentCoords, calculatedPoiInfo);
+        return new MapWithMarkers(tex, currentCoords, calculatedPoiInfo);
     }
 
     private void CalcPosition(out float x, out float y, Coords center, Coords coords, int zoomLevel)

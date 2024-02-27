@@ -31,7 +31,7 @@ public class NavigationView : UIView
     #endregion
 
     private NavigationService navigationService;
-    private Map map;
+    private MapWithMarkers mapWithMarkers;
     private VisualElement mapElement;
     private int currentZoomLevel = 15;
     private const int widthHalf = 180;
@@ -94,22 +94,22 @@ public class NavigationView : UIView
 
     private async Task PaintMap(bool repaint = false)
     {
-        if (map == null || repaint)
-            map = await navigationService.FindMapByCurrentLocation(currentZoomLevel);
+        if (mapWithMarkers == null || repaint)
+            mapWithMarkers = await navigationService.FindMapWithMarkerByCurrentLocation(currentZoomLevel);
 
         mapElement.Clear();
-        mapElement.style.backgroundImage = new StyleBackground(map.MapTexture);
+        mapElement.style.backgroundImage = new StyleBackground(mapWithMarkers.MapTexture);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.None);
         mapElement.style.opacity = new StyleFloat(0f);
-        PaintMarker(map);
+        PaintMarker(mapWithMarkers);
         mapElement.style.display = new StyleEnum<DisplayStyle>(DisplayStyle.Flex);
         mapElement.style.opacity = new StyleFloat(1f);
     }
 
 
-    private void PaintMarker(Map currentMap)
+    private void PaintMarker(MapWithMarkers currentMapWithMarkers)
     {
-        foreach (var markerInfo in currentMap.Markers)
+        foreach (var markerInfo in currentMapWithMarkers.Markers)
         {
             var marker = GetMarkerVisualElement(markerInfo.Type);
             marker.style.translate = new StyleTranslate(
@@ -121,10 +121,10 @@ public class NavigationView : UIView
         }
     }
 
-    private void OnMarkerClicked(Marker marker)
+    private void OnMarkerClicked(PoiInfo poiInfo)
     {
         var markerDetailView = UINavigation.Instance.Push(MARKER_DETAIL) as MarkerDetailView;
-        markerDetailView.SetState(marker.Name, marker.BranchName, marker.Address);
+        markerDetailView.SetState(poiInfo);
     }
 
     private VisualElement GetMarkerVisualElement(MarkerType type)

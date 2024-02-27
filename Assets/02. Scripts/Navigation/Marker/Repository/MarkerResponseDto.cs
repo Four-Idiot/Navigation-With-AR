@@ -1,3 +1,3 @@
 using System.Collections.Generic;
 
-public record MarkerResponseDto(List<Marker> PoiInfos);
+public record MarkerResponseDto(List<PoiInfo> PoiInfos);

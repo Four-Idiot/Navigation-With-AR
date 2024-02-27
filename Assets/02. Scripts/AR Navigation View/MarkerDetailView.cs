@@ -4,9 +4,7 @@ using static UIViewIndex;
 
 public class MarkerDetailView : UIView
 {
-    private string name;
-    private string description;
-    private string address;
+    private PoiInfo poiInfo;
     private Texture2D backgroundImage;
 
     private VisualElement backgroundImageElement;
@@ -47,15 +45,13 @@ public class MarkerDetailView : UIView
 
     private void OnGuideButtonClicked(ClickEvent evt)
     {
-        var navigationDirectionView = UINavigation.Instance.Push(DIRECTION);
+        var directionView = UINavigation.Instance.Push(DIRECTION) as DirectionView;
+        directionView.Init(poiInfo);
     } 
     
-    public void SetState(string name = "", string description = "", string address = "", Texture2D backgroundImage = null)
+    public void SetState(PoiInfo poiInfo)
     {
-        this.name = name;
-        this.description = description;
-        this.address = address;
-        this.backgroundImage = backgroundImage;
+        this.poiInfo = poiInfo;
         SetVisualElementValue();
     }
 
@@ -65,9 +61,9 @@ public class MarkerDetailView : UIView
         if (backgroundImage != null)
             backgroundImageElement.style.backgroundImage = new StyleBackground(backgroundImage);
 
-        nameElement.text = name;
-        addressElement.text = address;
-        descriptionElement.text = description;
+        nameElement.text = poiInfo.Name;
+        addressElement.text = poiInfo.Address;
+        descriptionElement.text = poiInfo.BranchName;
     }
 
     private void OnBackButtonClicked(ClickEvent evt)

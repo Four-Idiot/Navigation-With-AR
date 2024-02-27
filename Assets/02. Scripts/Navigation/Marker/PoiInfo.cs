@@ -1,4 +1,4 @@
-﻿public record Marker(
+﻿public record PoiInfo(
     int Id,
     MarkerType Type,
     string Name,

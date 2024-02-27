@@ -10,7 +10,7 @@ public class MarkerService
         this.markerRepository = markerRepository;
     }
 
-    public async Task<List<Marker>> FindPoiInfo()
+    public async Task<List<PoiInfo>> FindPoiInfo()
     {
         var responsePoiDto = await markerRepository.FindPoiInfo();
         return responsePoiDto.PoiInfos;

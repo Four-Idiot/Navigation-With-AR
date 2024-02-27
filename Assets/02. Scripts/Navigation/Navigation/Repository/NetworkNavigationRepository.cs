@@ -33,8 +33,8 @@ public class NetworkNavigationRepository : INavigationRepository
             .AddParameter("level", mapRequestDto.Level)
             .AddParameter("format", "png8")
             .AddParameter("scale", 2)
-            .AddParameter("markers", "pos:126.744577 37.713834");
-
+            .AddParameter("markers", $"pos:{mapRequestDto.Longitude} {mapRequestDto.Latitude}");
+        
         foreach (var marker in mapRequestDto.Markers)
         {
             request.AddParameter("markers", $"color:red|pos:{marker.Longitude} {marker.Latitude}");
