@@ -745,7 +745,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f3fa3f9f9b4d1a8b17fb475e469dbc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ViewIndex>k__BackingField: 1
+  <ViewIndex>k__BackingField: 0
   uiTree: {fileID: 9197481963319205126, guid: ea817958378f83c42a92cfd45c8b5fd1, type: 3}
 --- !u!114 &1583662032
 MonoBehaviour:
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <ViewIndex>k__BackingField: 7
-  uiTree: {fileID: 9197481963319205126, guid: 0282e5404b8d7c04e9816be8a84570ba, type: 3}
+  uiTree: {fileID: 9197481963319205126, guid: 2859d0021f260ec4e857f4b21779abd9, type: 3}
 --- !u!114 &1583662037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 691a50d7341b4fb585292e79687eda23, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <ViewIndex>k__BackingField: 0
+  <ViewIndex>k__BackingField: 8
   uiTree: {fileID: 9197481963319205126, guid: 08f9bfa7a5956b8478dc667a17ea6b00, type: 3}
   arSession: {fileID: 1128213543}
   trackedImageManager: {fileID: 1966384921}
@@ -860,6 +860,12 @@ MonoBehaviour:
   - {fileID: 5284408445849593667, guid: 8f5a3a464ce376d448e614e3833cd69b, type: 3}
   - {fileID: 1936127820835010068, guid: ce9104f4d2d6c6f45974cd60dd2d26c4, type: 3}
   - {fileID: 2469796975862904791, guid: 35f0b9b6530c4fb47b7126e8d3a80bf1, type: 3}
+  docentPrefabs:
+  - {fileID: 8293013391492133745, guid: 415e9c5dd831d4a75917b3c0095782c5, type: 3}
+  - {fileID: 8293013391492133745, guid: 00da15ccb76a82c43ad15e2ac5474af9, type: 3}
+  - {fileID: 8293013391492133745, guid: 1e8e95fe9818c474eb3eab21f78ce257, type: 3}
+  - {fileID: 8293013391492133745, guid: f56146d07c8988f4f941c3b69439eba6, type: 3}
+  - {fileID: 8293013391492133745, guid: 65850704657a32a4ea0b1564cb00d2c1, type: 3}
 --- !u!1 &1828383535
 GameObject:
   m_ObjectHideFlags: 0

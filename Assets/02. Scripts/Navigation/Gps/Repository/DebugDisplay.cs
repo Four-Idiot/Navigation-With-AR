@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Android;
 
-public class GpsTest : MonoBehaviour
+public class DebugDisplay : MonoBehaviour
 {
     public static string DebugMessage = "For Debug";
     

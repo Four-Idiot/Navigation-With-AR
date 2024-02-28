@@ -11,7 +11,8 @@ public class PhotozoneDetailView : UIView
     private Label descriptionLabel;
     private VisualElement backButton;
     private VisualElement locationButton;
-    private Label title;
+    private VisualElement cameraButton;
+    private VisualElement locationImage;
 
     #endregion
     
@@ -22,8 +23,9 @@ public class PhotozoneDetailView : UIView
         nameLabel = uiInstance.Q<Label>("name");
         descriptionLabel = uiInstance.Q<Label>("description");
         backButton = uiInstance.Q<VisualElement>("back-button");
-        title = uiInstance.Q<Label>("title");
         locationButton = uiInstance.Q<VisualElement>("view-location");
+        cameraButton = uiInstance.Q<VisualElement>("camera-button");
+        locationImage = uiInstance.Q<VisualElement>("location-image");
     }
 
     public override void Show()
@@ -31,6 +33,7 @@ public class PhotozoneDetailView : UIView
         base.Show();
         backButton.RegisterCallback<ClickEvent>(OnBackButtonClicked);
         locationButton.RegisterCallback<ClickEvent>(OnLocationButtonClicked);
+        cameraButton.RegisterCallback<ClickEvent>(OnCameraButtonClicked);
     }
 
     public override void Hide()
@@ -38,6 +41,12 @@ public class PhotozoneDetailView : UIView
         base.Hide();
         backButton.UnregisterCallback<ClickEvent>(OnBackButtonClicked);
         locationButton.UnregisterCallback<ClickEvent>(OnLocationButtonClicked);
+        cameraButton.UnregisterCallback<ClickEvent>(OnCameraButtonClicked);
+    }
+    
+    private void OnCameraButtonClicked(ClickEvent evt)
+    {
+        UINavigation.Instance.Push(UIViewIndex.AR_PHOTOZONE);
     }
 
     private void OnLocationButtonClicked(ClickEvent evt)
@@ -54,15 +63,8 @@ public class PhotozoneDetailView : UIView
     public void Init(PoiInfo poiInfo)
     {
         this.poiInfo = poiInfo;
-        if (poiInfo.Type == MarkerType.PHOTOZONE)
-        {
-            title.text = "AR 포토존";
-        }
-        else
-        {
-            title.text = "AR 고스트 도슨트";
-        }
         nameLabel.text = poiInfo.Name;
         descriptionLabel.text = poiInfo.Address;
+        locationImage.style.backgroundImage = new StyleBackground(poiInfo.image);
     }
 }

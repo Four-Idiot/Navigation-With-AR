@@ -1,6 +1,6 @@
 <ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
     <Style src="project://database/Assets/02.%20Scripts/Main%20View/MainView_USS.uss?fileID=7433441132597879392&amp;guid=2f8ea9bf2d2087f4b91293995e4f6d47&amp;type=3#MainView_USS" />
-    <ui:VisualElement name="container" class="menu" style="background-color: rgb(255, 255, 255);">
+    <ui:VisualElement name="container" class="menu" style="background-color: rgb(255, 255, 255); flex-grow: 1;">
         <ui:VisualElement name="head" style="flex-grow: 1; height: 206px; padding-top: 79px;">
             <ui:VisualElement name="logo-container" style="flex-grow: initial; justify-content: center; align-items: center; flex-shrink: initial;">
                 <ui:Image name="logo-image" style="background-image: url(&apos;project://database/Assets/Sprites/1.%20%EB%A1%9C%EB%94%A9%20%EB%B0%8F%20%ED%99%88/Logo_%EC%A0%9C%EB%AC%BC%ED%8F%AC.png?fileID=2800000&amp;guid=b4731f61cfcd5eb4687967c53ba059c0&amp;type=3#Logo_제물포&apos;); flex-grow: initial; height: 79px; width: 79px;" />

@@ -22,7 +22,7 @@ public class PoiListController
 
     private void FillPhotozoneList()
     {
-        var photozonePoiList = poiList.Where(poi => poi.Type == MarkerType.PHOTOZONE)
+        List<PoiInfo> photozonePoiList = poiList.Where(poi => poi.Type == MarkerType.PHOTOZONE)
             .ToList();
         FillList(photozoneList, photozonePoiList);
     }

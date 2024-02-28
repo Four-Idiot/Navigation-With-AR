@@ -1,4 +1,6 @@
-﻿public record PoiInfo(
+﻿using UnityEngine;
+
+public record PoiInfo(
     int Id,
     MarkerType Type,
     string Name,
@@ -8,7 +10,8 @@
     int OpenTime,
     int CloseTime,
     float PositionX = 0,
-    float PositionY = 0
+    float PositionY = 0,
+    Texture2D image = null
 );
 
 public enum MarkerType

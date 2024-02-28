@@ -6,12 +6,14 @@ public class PoiListEntryController
     private Label nameLabel;
     private Label descriptionLabel;
     private PoiInfo poi;
+    private VisualElement previewImage;
 
     public void SetVisualElement(VisualElement visualElement)
     {
         nameLabel = visualElement.Q<Label>("name");
         descriptionLabel = visualElement.Q<Label>("description");
         container = visualElement.Q<VisualElement>("photozone-list-item");
+        previewImage = visualElement.Q<VisualElement>("preview-image");
     }
 
     public void SetPoiData(PoiInfo poi)
@@ -19,6 +21,7 @@ public class PoiListEntryController
         this.poi = poi;
         nameLabel.text = poi.Name;
         descriptionLabel.text = poi.Address;
+        previewImage.style.backgroundImage = new StyleBackground(poi.image);
         container.RegisterCallback<ClickEvent>(OnItemClicked);
     }
 
