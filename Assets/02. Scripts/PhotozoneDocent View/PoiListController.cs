@@ -8,11 +8,11 @@ public class PoiListController
 
     private ListView photozoneList;
     private ListView docentList;
-    private List<Marker> poiList;
+    private List<PoiInfo> poiList;
 
-    public void InitializePoiList(VisualTreeAsset listTemplate, ListView photozoneList, ListView docentList, List<Marker> poiList)
+    public void InitializePoiList(VisualTreeAsset listEntryTemplate, ListView photozoneList, ListView docentList, List<PoiInfo> poiList)
     {
-        listEntryTemplate = listTemplate;
+        this.listEntryTemplate = listEntryTemplate;
         this.photozoneList = photozoneList;
         this.docentList = docentList;
         this.poiList = poiList;
@@ -22,7 +22,7 @@ public class PoiListController
 
     private void FillPhotozoneList()
     {
-        var photozonePoiList = poiList.Where(poi => poi.Type == MarkerType.PHOTOZONE)
+        List<PoiInfo> photozonePoiList = poiList.Where(poi => poi.Type == MarkerType.PHOTOZONE)
             .ToList();
         FillList(photozoneList, photozonePoiList);
     }
@@ -34,7 +34,7 @@ public class PoiListController
         FillList(docentList, docentPoiList);
     }
 
-    private void FillList(ListView list, List<Marker> selectedPoiList)
+    private void FillList(ListView list, List<PoiInfo> selectedPoiList)
     {
         list.makeItem = () =>
         {

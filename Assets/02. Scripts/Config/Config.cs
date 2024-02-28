@@ -22,6 +22,9 @@ public class Config : Singleton<Config>
     [Tooltip("true: api 사용, false: 로컬 데이터 사용")]
     private bool network = false;
 
+    [SerializeField]
+    private GameObject arSessionGameObject;
+
     private INavigationRepository navigationRepository;
     private NavigationService navigationService;
 
@@ -36,6 +39,7 @@ public class Config : Singleton<Config>
     protected override void Awake()
     {
         base.Awake();
+        Debug.Log(arSessionGameObject);
         Inject();
     }
 
@@ -44,6 +48,11 @@ public class Config : Singleton<Config>
         NavigationService();
         GpsService();
         PoiService();
+    }
+
+    public GameObject ARSessionObject()
+    {
+        return arSessionGameObject;
     }
 
     public MarkerService PoiService()

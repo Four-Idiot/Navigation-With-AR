@@ -71,7 +71,7 @@ public class AndroidGpsRepository : IGpsRepository
             coords = findCoords;
         }
         Coords result = findCoords ?? coords;
-        GpsTest.DebugMessage = $"{result.Longitude} / {result.Latitude}";
+        DebugDisplay.DebugMessage = $"{result.Longitude} / {result.Latitude}";
         return await Task.FromResult(result);
     }
 
